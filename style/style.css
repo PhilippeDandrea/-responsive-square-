@@ -1,0 +1,36 @@
+/* Suppression des marges et un padding de haut de 1em */
+body {
+    margin: 0;
+    padding: 1em 0 0 0;
+}
+
+/* Disposition en grille */
+.grille-logos {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-gap: 0.5em;
+}
+
+.logo {
+    background-color: #000;
+    position: relative;
+}
+
+/* Utilisation du ::after et du padding pour un carré responsive */
+.logo::after {
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+
+.logo img {
+    max-width: 100%;
+    /* Permet de sortir les images du flux */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Repositionnement pour le centrage */
+    transform: translate(-50%,-50%);
+}
